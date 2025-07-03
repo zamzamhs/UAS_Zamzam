@@ -1,2 +1,3 @@
 buat migration custom_table_11
-Jalankan migration dan pastikan tabel tersedia di database. 
+Jalankan migration dan pastikan tabel tersedia di database.
+Buat model custom_table_11

@@ -2,3 +2,4 @@ buat migration custom_table_11
 Jalankan migration dan pastikan tabel tersedia di database.
 Buat model custom_table_11
 Buat route-resource custom_table di web.php.
+Buat controller CustomTableController menggunakan –resource.

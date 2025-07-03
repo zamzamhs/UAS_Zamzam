@@ -15,18 +15,24 @@ class CustomTableController extends Controller
 
     public function create()
     {
-        return view('custom_table.create');
+        return view('custom_table_create');
     }
 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
+            'field1' => 'required|string|max:255', // Field 1 must be a string and not exceed 255 characters
+            'field2' => 'required|string|max:255', // Field 2 must be a string and not exceed 255 characters
+            'description' => 'nullable|string',   // Description is optional but must be a string if provided
         ]);
-
         CustomTable::create($validatedData);
         return redirect()->route('custom_table.index')->with('success', 'Data created successfully.');
+    }
+
+    public function show($id)
+    {
+        $data = CustomTable::findOrFail($id); // Retrieve the entry by ID
+        return view('custom_table.show', compact('data')); // Return the view with the data
     }
 
     public function edit($id)
@@ -38,8 +44,9 @@ class CustomTableController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
+            'field1' => 'required|string|max:255', // Field 1 must be a string and not exceed 255 characters
+            'field2' => 'required|string|max:255', // Field 2 must be a string and not exceed 255 characters
+            'description' => 'nullable|string',   // Description is optional but must be a string if provided
         ]);
 
         $data = CustomTable::findOrFail($id);

@@ -10,10 +10,5 @@ class CustomTable extends Model
     use HasFactory;
 
     protected $table = 'custom_table_11';
-
-    protected $fillable = [
-        'field1',
-        'field2',
-        'description',
-    ];
+    protected $fillable = ['field1', 'field2', 'description']; // Ensure all fields are listed here
 }

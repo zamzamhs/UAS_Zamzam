@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomTableController;
 
-Route::get('/', function () {
-    return view('custom_table');
-});
+Route::get('/', [CustomTableController::class, 'index']);
+
+Route::resource('custom_table', CustomTableController::class);
